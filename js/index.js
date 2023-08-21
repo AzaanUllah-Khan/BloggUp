@@ -109,7 +109,7 @@ onAuthStateChanged(auth, async (user) => {
                                                       height="90px" width="90px" style="object-fit: cover; border-radius: 50%" onclick="location.replace('../profile/profile.html')">
                                               </div>
                                               <div class="userbox ms-3">
-                                                  <h3 id="blog-title" style="font-size: 22px">${doc.data().title}</h3>
+                                                  <h3 id="blog-title" style="font-size: 22px; margin-bottom: 3px">${doc.data().title}</h3>
                                                   <p class="text-muted" style="margin:0; color: #aaa; font-weight: lighter">${(doc.data().name) || "User"} - ${doc.data().timeOfPost ? moment(doc.data().timeOfPost.toDate()).fromNow() : moment().fromNow()}</p>
                                               </div>
                                           </div>

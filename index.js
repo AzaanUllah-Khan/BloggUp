@@ -39,7 +39,7 @@ querySnapshot.forEach((doc) => {
                           height="90px" width="90px" style="object-fit: cover;  border-radius: 50%;" onclick="goTo('${doc.data().email}','${url}')">
                       </div>
                       <div class="userbox ms-3 ps-3" style="border-left: 1px solid #eee;">
-                          <h3 id="blog-title" style="font-size: 22px">${doc.data().title}</h3>
+                          <h3 id="blog-title" style="font-size: 22px; margin-bottom: 3px">${doc.data().title}</h3>
                           <p class="text-muted" style="margin:0; color: #aaa; font-weight: lighter">${(doc.data().name) || "User"} - ${doc.data().timeOfPost ? moment(doc.data().timeOfPost.toDate()).fromNow() : moment().fromNow()}</p>
                       </div>
                   </div>
@@ -51,7 +51,7 @@ querySnapshot.forEach((doc) => {
                   <i class="fa-solid fa-heart"
 id="heart-${doc.id}"
 onclick="addToLike('${doc.id}')"
-style="color: ${doc.data().likedBy && doc.data().likedBy.includes(auth.currentUser.uid) ? '#7749F8' : '#7749F8'}; font-size: 18px; cursor: pointer">
+style="color: ${doc.data().likedBy && doc.data().likedBy.includes(auth.currentUser.uid) ? 'red' : '#7749F8'}; font-size: 18px; cursor: pointer">
 </i>
 <h4 id="likes-${doc.id}" style="font-size: 16px; font-weight: lighter; margin: 0; margin-left: 10px; color: #7749F8">${doc.data().likes || 0}</h4>
               </div>
@@ -71,7 +71,7 @@ style="color: ${doc.data().likedBy && doc.data().likedBy.includes(auth.currentUs
             }
             const heartIcon = document.getElementById(`heart-${doc.id}`);
             if (heartIcon) {
-                heartIcon.style.color = updatedData.likedBy && updatedData.likedBy.includes(auth.currentUser.uid) ? '#ff0000' : '';
+                heartIcon.style.color = updatedData.likedBy && updatedData.likedBy.includes(auth.currentUser.uid) ? '#ff0000' : '#7749f8';
             }
         } catch (error) {
             console.error('Error updating like status:', error);

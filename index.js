@@ -35,7 +35,7 @@ querySnapshot.forEach((doc) => {
               <div class="blog p-3">
                   <div class="profile d-flex align-items-center" style="border-bottom: 1px solid #eee; padding-bottom: 10px; align-items: center">
                       <div class="imgbox">
-                          <img src="${url}" class="cursor"
+                          <img src="${(url) || "https://www.thecakepalace.com.au/wp-content/uploads/2022/10/dummy-user.png"}" class="cursor"
                           height="90px" width="90px" style="object-fit: cover;  border-radius: 50%;" onclick="goTo('${doc.data().email}','${url}')">
                       </div>
                       <div class="userbox ms-3 ps-3" style="border-left: 1px solid #eee;">

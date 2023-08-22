@@ -37,11 +37,11 @@ querySnapshot.forEach((doc) => {
                                       <div class="blog p-3">
                                           <div class="profile d-flex">
                                               <div class="imgbox">
-                                                  <img src="${url}" class="rounded"
-                                                      height="110px" width="110px" style="object-fit: cover" onclick="goTo('${doc.data().email}')">
+                                                  <img src="${(url) || "https://www.thecakepalace.com.au/wp-content/uploads/2022/10/dummy-user.png"}" class="rounded"
+                                                      height="100px" width="100px" style="object-fit: cover" onclick="goTo('${doc.data().email}')">
                                               </div>
                                               <div class="userbox ms-4">
-                                                  <h3 id="blog-title">${doc.data().title}</h3>
+                                                  <h3 id="blog-title" style="word-break: break-all">${doc.data().title}</h3>
                                                   <p class="fw-bold text-muted">${(doc.data().name) || "User"} - ${doc.data().timeOfPost ? moment(doc.data().timeOfPost.toDate()).fromNow():moment().fromNow()}</p>
                                               </div>
                                           </div>

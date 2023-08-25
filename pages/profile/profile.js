@@ -130,6 +130,11 @@ document.getElementById("upPass").addEventListener("click", () => {
             });
         }).catch((error) => {
             console.log(error);
+            Swal.fire({
+                title: `Error Updating Password`,
+                text: "Try logging in again",
+                icon: 'error'
+            })
         });
     }
 })

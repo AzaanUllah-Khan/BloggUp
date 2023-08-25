@@ -122,9 +122,13 @@ document.getElementById("upPass").addEventListener("click", () => {
     const password = document.getElementById("p").value;
     if (password == newPassword) {
         updatePassword(user, newPassword).then(() => {
-            console.log("done");
+            Swal.fire({
+                title: `Password Updated Successfully`,
+                icon: 'success'
+            }).then(() => {
+                location.reload();
+            });
         }).catch((error) => {
-
             console.log(error);
         });
     }

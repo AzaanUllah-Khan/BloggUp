@@ -39,7 +39,7 @@ querySnapshot.forEach((doc) => {
                           height="90px" width="90px" style="object-fit: cover;  border-radius: 50%;" onclick="goTo('${doc.data().email}','${url}')">
                       </div>
                       <div class="userbox ms-3 ps-3" style="border-left: 1px solid #eee;">
-                          <h3 id="blog-title" style="font-size: 22px; margin-bottom: 3px">${doc.data().title}</h3>
+                          <h3 id="blog-title" style="font-size: 22px; margin-bottom: 3px; word-break: break-all">${doc.data().title}</h3>
                           <p class="text-muted" style="margin:0; color: #aaa; font-weight: lighter">${(doc.data().name) || "User"} - ${doc.data().timeOfPost ? moment(doc.data().timeOfPost.toDate()).fromNow() : moment().fromNow()}</p>
                       </div>
                   </div>
